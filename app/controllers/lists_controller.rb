@@ -2,14 +2,11 @@ class ListsController < ApplicationController
   before_action :set_list, except: %i[index new create]
   def index
     @lists = List.all
+    @list = List.new
   end
 
   def show
     @bookmark = Bookmark.new
-  end
-
-  def new
-    @list = List.new
   end
 
   def create
